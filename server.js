@@ -4,7 +4,8 @@ const app = express();
 const bodyparser = require("body-parser");
 const session = require("express-session");
 const { v4: uuidv4 } = require("uuid");
-const router = require("./router");
+const router = require("./allRouters/router");
+const adminrouter = require("./allRouters/adminrouter");
 
 const PORT = 9000;
 
@@ -22,13 +23,7 @@ app.use(
   })
 );
 app.use("/", router);
-app.get("/", (req, res) => {
-  if (req.session.user) {
-    res.redirect("/mydashboard");
-  } else {
-    res.render("base", { tit: "login page" });
-  }
-});
+app.use("/", adminrouter);
 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);

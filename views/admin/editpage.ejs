@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+    font-family: sans-serif;
+    margin: 0;
+  }
+  
+  .container {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+    </style>
+  </head>
+  <body>
+   
+
+    <h1 style="text-align: center;">Update Details</h1>
+
+    <div class="container">
+      <form action="/editeddetails" method="post">
+        <input type="email" name="email" value="<%=data.email %>" />
+        <input type="text" name="first" value="<%=data.first %>" />
+        <input type="text" name="last" value="<%=data.last%>" />
+        <input type="password" name="password" value="<%=data.password%>" />
+        <button type="submit">update</button>
+      </form>
+    </div>
+  </body>
+</html>
